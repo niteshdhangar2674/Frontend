@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>hello</h1>
+
+    <div class="container">
+        <p class="para1"> first para</p>
+    </div>
+
+    <div>
+        <ul id="ul">
+            <li id="first">first li</li>
+            <li id="second">second li</li>
+            <li id="third">third li</li>
+        </ul>
+    </div>
+
+    <button id="btn"></button>
+
+    <script>
+        const p1_element = document.querySelector(".para1");
+        const div_ele = document.querySelector(".container");
+
+        setTimeout(() => {
+            div_ele.removeChild(p1_element);
+        }, 2000);
+
+
+        const btn = document.getElementById("btn");
+
+        btn.addEventListener("click", () => {
+            const second = document.getElementById("second");
+            second.remove();
+
+        })
+
+
+    </script>
+</body>
+
+</html>

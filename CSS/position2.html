@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .Dp {
+            width: 100px;
+            height: 100px;
+            margin: 50px;
+            position: relative;
+            border-radius: 50%;
+            text-align: center;
+            background-color: rgb(80, 80, 81);
+            /* overflow: hidden; */
+
+        }
+
+        .popup {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            background-color: green;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+
+
+        }
+
+        .Dp img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .Dp img:hover {
+            transform: scale(1.3);
+
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="Dp">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpQQJkX4QxVH-28D1eFJ_RP7evdCNcec4wTA9wDIUwlw&s=10"
+            alt="ND">
+        <div class="popup"></div>
+    </div>
+
+
+
+</body>
+
+</html>

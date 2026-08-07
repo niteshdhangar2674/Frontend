@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .youtub {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            /* height: 100vh; */
+        }
+
+        .video {
+            /* width: 300px; */
+            height: 200px;
+            /* height: 200px; */
+            background-color: darkgrey;
+            color: white;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        @media(max-width:1000px) {
+            .youtub {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .video {
+                height: 150px;
+            }
+        }
+
+        @media(max-width:700px) {
+            .youtub {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+        @media(max-width:350px) {
+            .youtub {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="youtub">
+        <div class="video">video 1</div>
+        <div class="video">video 2</div>
+        <div class="video">video 3</div>
+        <div class="video">video 4</div>
+        <div class="video">video 5</div>
+        <div class="video">video 6</div>
+        <div class="video">video 7</div>
+        <div class="video">video 8</div>
+        <div class="video">video 9</div>
+        <div class="video">video 10</div>
+    </div>
+</body>
+
+</html>

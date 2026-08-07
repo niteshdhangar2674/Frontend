@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p. class="item" title="this is item 1" id="item1">item 1</p>
+
+        <script>
+            const p_element = document.getElementById("item1");
+
+            console.log(p_element);
+
+            p_element.removeAttribute("title");
+
+            p_element.removeAttribute("class");
+
+            p_element.setAttribute("class", "foo");
+
+        </script>
+</body>
+
+</html>

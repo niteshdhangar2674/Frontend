@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="input">
+
+    <button id="btn">add student</button>
+
+    <div id="card"></div>
+
+
+    <script>
+
+        const input_element = document.getElementById("input").value;
+        const btn_element = document.getElementById("btn");
+        const div_element = document.getElementById("card");
+
+        // btn_element.onClick = () => {
+        //     const h1_element = document.createElement("h1");
+        //     const p_element = document.createElement("p");
+
+        //     h1_element.innerText = input_element;
+        //     p_element.innerText = "Roll No 2342"
+
+        //     div_element.appendChild(h1_element, p_element);
+
+        // }
+
+        btn_element.addEventListener("click", () => {
+            const h1_element = document.createElement("h1");
+            const p_element = document.createElement("p");
+
+            h1_element.innerText = input_element;
+            p_element.innerText = "Roll No 2342"
+
+            div_element.appendChild(h1_element, p_element);
+
+        })
+
+    </script>
+</body>
+
+</html>

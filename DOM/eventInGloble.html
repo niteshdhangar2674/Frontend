@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="p1">this is first para</p>
+    <p class="p2">this is second para</p>
+    <p>this is third para</p>
+    <p id="p4">this is four para</p>
+
+    <script>
+        document.addEventListener("click", (e) => {
+            if (e.target.matches("#p1")) {
+                e.target.style.border = "2px solid black";
+            }
+            if (e.target.matches("#p4")) {
+                e.target.style.background = "yellow"
+            }
+            if (e.target.matches(".p2")) {
+                e.target.remove();
+            }
+
+        })
+    </script>
+</body>
+
+</html>

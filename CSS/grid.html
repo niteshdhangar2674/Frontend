@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        .product {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            /* border: 1px solid black; */
+        }
+
+        .card {
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        @media (max-width: 600px) {
+            .product {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media(max-width:350px) {
+            .product {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="product">
+        <div class="card">
+            <img src="https://picsum.photos/200?1">
+            <h3>headphone</h3>
+            <p>199$</p>
+        </div>
+        <div class="card">
+            <img src="https://picsum.photos/200?2">
+            <h3>watch</h3>
+            <p>299$</p>
+        </div>
+        <div class="card">
+            <img src="https://picsum.photos/200?3">
+            <h3>phone</h3>
+            <p>499$</p>
+        </div>
+    </div>
+</body>
+
+</html>
