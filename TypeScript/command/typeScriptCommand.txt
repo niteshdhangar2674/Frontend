@@ -1,0 +1,7 @@
+// run ts code
+--> npx tsc  file name (index.ts) // ts create a javascript file 
+                                     and then run js file 
+  
+  // run ts code without create js file                                    
+--> npx tsc --noEmit index.ts && npx tsx index.ts
+
