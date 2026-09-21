@@ -6,6 +6,7 @@ import Count from './Component /UseState/Count'
 import ChangeTitle from './Component /UseEffect/ChangeTitle'
 import ModeHandler from './Component /UseEffect/ModeHandler'
 import TextEditor from './Component /UseEffect/TextEditor'
+import FormCompletionPercentage from "./Component /UseEffect/FormCompletionPercentage.jsx"
 function App() {
 
   return (
@@ -23,7 +24,9 @@ function App() {
 
       {/* <ModeHandler></ModeHandler> */}
 
-      <TextEditor></TextEditor>
+      {/* <TextEditor></TextEditor> */}
+
+      <FormCompletionPercentage></FormCompletionPercentage>
     </>
   )
 }
