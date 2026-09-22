@@ -8,6 +8,7 @@ import { PageNotFound } from './Components/NotFoundPage';
 import { Navbar } from './Components/Navbar';
 import { JobDetails } from './Components/JobDetails';
 import { JobApplied } from './Components/JobApplied';
+import { ApplyForm } from './Components/ApplyForm';
 function App() {
 
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path='/jobs' element={<Jobs />} />
         <Route path='/login' element={<Login />} />
         <Route path='/jobs/:id' element={<JobDetails />} />
+        <Route path='/jobs/:id/applyform' element={<ApplyForm />} />
         <Route path='/jobs/:id/applied' element={<JobApplied />} />
         <Route path='*' element={<PageNotFound />} />
 
