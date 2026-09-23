@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { useParams } from "react-router-dom";
 
 export function ApplyForm() {
     const [formData, setFormData] = useState({
@@ -15,6 +16,7 @@ export function ApplyForm() {
     })
     const [resume, setResume] = useState(null);
     const [error, setError] = useState(null);
+
     const handleChange = (event) => {
         const { name, value, type, checked } = event.target;
         const newVal = type == "checkbox" ? checked : value;
@@ -25,12 +27,134 @@ export function ApplyForm() {
             }
         });
     };
+
     const handleResume = (event) => {
         const resume = event.target.files[0];
         setResume(resume);
     };
+
+    const validationForm = () => {
+        const newErrors = {};
+        //name
+        if (!formData.name.trim()) {
+            newErrors.name = "Full Name required!"
+        }
+        else if (formData.name.trim().length < 3) {
+            newErrors.name = "Name must be at least 3 characters"
+        }
+        // Email
+        if (!formData.email.trim()) {
+            newErrors.email = "Email required!"
+        }
+        else if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(formData.email) === false) {
+            newErrors.email = "Enter valid Email"
+        }
+
+        // phone
+
+        if (!formData.phone.trim()) {
+            newErrors.phone = "phone required!"
+        }
+        else if (/^[6-9]\d{9}$/.test(formData.phone) === false) {
+            newErrors.phone = "Phone should valid with 10 digits"
+        }
+
+
+        //exprerience 
+
+        if (formData.experience == "") {
+            newErrors.experience = "exprerience required!"
+        }
+        else if (Number(formData.experience) < 0) {
+            newErrors.experience = "exprecience cannot be negative"
+        }
+
+        //skills 
+
+        if (!formData.skills.trim()) {
+            newErrors.skills = "skills required!"
+        }
+
+
+        //location 
+
+        if (!formData.location.trim()) {
+            newErrors.location = "Select a work preference";
+        }
+
+        // converletter
+
+        if (!formData.coverLetter.trim()) {
+            newErrors.coverLetter = "coverletter required!"
+        }
+        else if (formData.coverLetter.length < 50) {
+            newErrors.coverLetter = "Cover letter must be at least 50 characters";
+        }
+
+        // resume 
+
+        if (!resume) {
+            newErrors.resume = "Please upload your resume";
+        }
+
+        // terms 
+
+        if (!formData.terms) {
+            newErrors.terms = "You must accpet the terms"
+        }
+
+
+        return newErrors;
+
+
+    }
+    const { id } = useParams();
+    const submitForm = async (event) => {
+        event.preventDefault();
+
+        const validationError = validationForm();
+
+
+        setError(validationError);
+
+        if (Object.keys(validationError).length > 0) return;
+
+        // make an api call to my backend to submit this application.
+
+
+        try {
+
+            const data = new FormData();
+            data.append("jobId", id)
+            // for (let key in formData) {
+            //     data.append(key, formData[key]);
+            // }
+            data.append("name", formData.name);
+            data.append("email", formData.email);
+            data.append("phone", formData.phone);
+            data.append("experience", formData.experience);
+            data.append("currentCompany", formData.currentCompany);
+            data.append("expectedSalary", formData.expectedSalary);
+            data.append("skills", formData.skills);
+            data.append("location", formData.location);
+            data.append("coverLetter", formData.coverLetter);
+            data.append("terms", String(formData.terms));
+            data.append("resume", resume);
+
+            const response = await fetch("http://localhost:5001/api/applications", {
+                method: "POST",
+                body: data,
+            })
+            const result = await response.json();
+            console.log(result);
+        }
+        catch (error) {
+            console.log("Api error");
+            console.log(error);
+        }
+    }
     return (
-        <form>
+        <form onSubmit={submitForm}>
             {/* full name */}
             <div>
                 <label>Full Name</label>
