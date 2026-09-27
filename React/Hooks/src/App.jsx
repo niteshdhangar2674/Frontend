@@ -1,12 +1,13 @@
 import './App.css'
-import { Timer } from "./Component /UseEffect/Timer"
-import { AuthProvider } from './Component /UseContext/AuthContext/AuthContext'
-import Dashboard from './Component /UseContext/AuthDashboard/Dashboard'
-import Count from './Component /UseState/Count'
-import ChangeTitle from './Component /UseEffect/ChangeTitle'
-import ModeHandler from './Component /UseEffect/ModeHandler'
-import TextEditor from './Component /UseEffect/TextEditor'
-import FormCompletionPercentage from "./Component /UseEffect/FormCompletionPercentage.jsx"
+// import { Timer } from "./Component /UseEffect/Timer"
+// import { AuthProvider } from './Component /UseContext/AuthContext/AuthContext'
+// import Dashboard from './Component /UseContext/AuthDashboard/Dashboard'
+// import Count from './Component /UseState/Count'
+// import ChangeTitle from './Component /UseEffect/ChangeTitle'
+// import ModeHandler from './Component /UseEffect/ModeHandler'
+// import TextEditor from './Component /UseEffect/TextEditor'
+// import FormCompletionPercentage from "./Component /UseEffect/FormCompletionPercentage.jsx"
+import { Reducers } from './Component/UseReducer/Reducers.jsx'
 function App() {
 
   return (
@@ -26,7 +27,9 @@ function App() {
 
       {/* <TextEditor></TextEditor> */}
 
-      <FormCompletionPercentage></FormCompletionPercentage>
+      {/* <FormCompletionPercentage></FormCompletionPercentage> */}
+
+      <Reducers></Reducers>
     </>
   )
 }
