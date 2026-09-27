@@ -15,7 +15,7 @@ export function ApplyForm() {
         terms: false
     })
     const [resume, setResume] = useState(null);
-    const [error, setError] = useState(null);
+    const [error, setError] = useState({});
 
     const handleChange = (event) => {
         const { name, value, type, checked } = event.target;
@@ -162,6 +162,7 @@ export function ApplyForm() {
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="Enter Full name" />
+                {error.name && <p style={{ color: "red" }}>{error.name}</p>}
             </div>
             {/* email */}
             <div>
@@ -170,6 +171,7 @@ export function ApplyForm() {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="Enter email" />
+                {error.email && <p style={{ color: "red" }}>{error.email}</p>}
             </div>
             {/* phone */}
             <div>
@@ -178,6 +180,7 @@ export function ApplyForm() {
                     value={formData.phone}
                     onChange={handleChange}
                     placeholder="6257457809" />
+                {error.phone && <p style={{ color: "red" }}>{error.phone}</p>}
             </div>
             {/* exp */}
             <div>
@@ -186,6 +189,7 @@ export function ApplyForm() {
                     value={formData.experience}
                     onChange={handleChange}
                     name="experience" />
+                {error.experience && <p style={{ color: "red" }}>{error.experience}</p>}
             </div>
 
             {/* current company */}
@@ -195,6 +199,7 @@ export function ApplyForm() {
                     value={formData.currentCompany}
                     onChange={handleChange}
                 />
+                {error.currentCompany && <p style={{ color: "red" }}>{error.currentCompany}</p>}
             </div>
 
             {/* expected salary */}
@@ -204,6 +209,7 @@ export function ApplyForm() {
                     value={formData.expectedSalary}
                     onChange={handleChange}
                 />
+                {error.expectedSalary && <p style={{ color: "red" }}>{error.expectedSalary}</p>}
             </div>
 
             {/* skills */}
@@ -213,6 +219,7 @@ export function ApplyForm() {
                     value={formData.skills}
                     onChange={handleChange}
                     placeholder="React ,Node.js , SQL...." />
+                {error.skills && <p style={{ color: "red" }}>{error.skills}</p>}
             </div>
 
             {/* location preference -> (Remote, Hybrid, On-site) */}
@@ -228,6 +235,7 @@ export function ApplyForm() {
                     <option value="hybrid">Hybrid</option>
                     <option value="nosite">On-site</option>
                 </select>
+                {error.location && <p style={{ color: "red" }}>{error.location}</p>}
             </div>
 
             {/* coverletter -> textarea */}
@@ -237,6 +245,7 @@ export function ApplyForm() {
                     value={formData.coverLetter}
                     onChange={handleChange}
                     placeholder="Tell us why you are a good fit.."></textarea>
+                {error.coverLetter && <p style={{ color: "red" }}>{error.coverLetter}</p>}
             </div>
 
             {/* resume */}
@@ -245,6 +254,7 @@ export function ApplyForm() {
                 <input type="file" accept=".pdf,.doc,.docx"
                     onChange={handleResume}
                 />
+                {error.result && <p style={{ color: "red" }}>{error.resume}</p>}
             </div>
 
             <div>
@@ -255,6 +265,7 @@ export function ApplyForm() {
                     />
                     agree to the terms
                 </label>
+                {error.terms && <p style={{ color: "red" }}>{error.terms}</p>}
             </div>
             <button type="submit">Submit Application</button>
         </form>
