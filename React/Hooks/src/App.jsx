@@ -1,4 +1,5 @@
 import './App.css'
+import OpitimiseReducers from './Component/UseReducer/OptimiseReducers.jsx'
 // import { Timer } from "./Component /UseEffect/Timer"
 // import { AuthProvider } from './Component /UseContext/AuthContext/AuthContext'
 // import Dashboard from './Component /UseContext/AuthDashboard/Dashboard'
@@ -29,7 +30,9 @@ function App() {
 
       {/* <FormCompletionPercentage></FormCompletionPercentage> */}
 
-      <Reducers></Reducers>
+      {/* <Reducers></Reducers> */}
+
+      <OpitimiseReducers></OpitimiseReducers>
     </>
   )
 }
