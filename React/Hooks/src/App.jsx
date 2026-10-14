@@ -9,6 +9,7 @@ import OpitimiseReducers from './Component/UseReducer/OptimiseReducers.jsx'
 // import TextEditor from './Component /UseEffect/TextEditor'
 // import FormCompletionPercentage from "./Component /UseEffect/FormCompletionPercentage.jsx"
 import { Reducers } from './Component/UseReducer/Reducers.jsx'
+import { UseMemoCounter } from './Component/UseMemo/UseMemoCounter.jsx'
 function App() {
 
   return (
@@ -32,7 +33,8 @@ function App() {
 
       {/* <Reducers></Reducers> */}
 
-      <OpitimiseReducers></OpitimiseReducers>
+      {/* <OpitimiseReducers></OpitimiseReducers> */}
+      <UseMemoCounter></UseMemoCounter>
     </>
   )
 }
